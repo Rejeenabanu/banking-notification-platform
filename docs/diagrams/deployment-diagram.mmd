@@ -1,0 +1,29 @@
+flowchart TB
+
+    USER[User]
+
+    ALB[Load Balancer]
+
+    CS[Customer Service]
+    AS[Account Service]
+    TS[Transaction Service]
+    NS[Notification Service]
+
+    PG[(PostgreSQL)]
+
+    REDIS[(Redis)]
+
+    USER --> ALB
+
+    ALB --> CS
+    ALB --> AS
+    ALB --> TS
+    ALB --> NS
+
+    CS --> PG
+    AS --> PG
+    TS --> PG
+    NS --> PG
+
+    TS --> REDIS
+    NS --> REDIS

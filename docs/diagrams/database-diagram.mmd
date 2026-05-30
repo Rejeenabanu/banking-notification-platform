@@ -1,0 +1,9 @@
+erDiagram
+
+    CUSTOMERS ||--o{ ACCOUNTS : owns
+
+    ACCOUNTS ||--o{ TRANSACTIONS : contains
+
+    TRANSACTIONS ||--o{ OUTBOX_EVENTS : generates
+
+    OUTBOX_EVENTS ||--o{ NOTIFICATIONS : triggers
